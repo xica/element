@@ -112,6 +112,7 @@ const DEFAULT_FORMATS = {
   week: 'yyyywWW',
   timerange: 'HH:mm:ss',
   daterange: 'yyyy-MM-dd',
+  weekrange: 'yyyy-MM-dd',
   datetimerange: 'yyyy-MM-dd HH:mm:ss',
   year: 'yyyy'
 };
@@ -124,6 +125,7 @@ const HAVE_TRIGGER_TYPES = [
   'month',
   'year',
   'daterange',
+  'weekrange',
   'timerange',
   'datetimerange',
   'dates'
@@ -212,6 +214,10 @@ const TYPE_VALUE_RESOLVER_MAP = {
     parser: RANGE_PARSER
   },
   datetimerange: {
+    formatter: RANGE_FORMATTER,
+    parser: RANGE_PARSER
+  },
+  weekrange: {
     formatter: RANGE_FORMATTER,
     parser: RANGE_PARSER
   },
