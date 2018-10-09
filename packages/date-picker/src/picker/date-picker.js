@@ -1,12 +1,20 @@
 import Picker from '../picker';
 import DatePanel from '../panel/date';
 import DateRangePanel from '../panel/date-range';
+import WeekRangePanel from '../panel/week-range';
 
 const getPanel = function(type) {
-  if (type === 'daterange' || type === 'datetimerange') {
-    return DateRangePanel;
+  switch (type) {
+    case 'daterange':
+    case 'datetimerange':
+      return DateRangePanel;
+
+    case 'weekrange':
+      return WeekRangePanel;
+
+    default:
+      return DatePanel;
   }
-  return DatePanel;
 };
 
 export default {
