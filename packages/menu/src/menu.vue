@@ -154,7 +154,12 @@
     },
     methods: {
       updateActiveIndex(val) {
-        const item = this.items[val] || this.items[this.activeIndex] || this.items[this.defaultActive];
+        let item
+        if (typeof val === 'string') {
+          item = this.items[val] || this.items[this.activeIndex] || this.items[this.defaultActive];
+        } else {
+          item = this.items[this.defaultActive];
+        }
         if (item) {
           this.activeIndex = item.index;
           this.initOpenedMenu();
